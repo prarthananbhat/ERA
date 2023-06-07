@@ -2,7 +2,7 @@
 
 ### Building the First Neural Networks
 
-#### Objective: Identify the digital from the MNIST data set using a Convolutional Neural Network and organise the code into 
+#### Objective: Identify the digits from the MNIST data set using a Convolutional Neural Network and organise the code into 
 ```
 .
 ├── README.md
