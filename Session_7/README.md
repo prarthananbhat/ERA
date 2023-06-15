@@ -19,7 +19,7 @@
 2. Create the First network with Convolution, max pooling and fc layers.
 3. Plot the accuracy Metrics 
 4. Create a table to calculate receptive field, number of parameters
-5. ![step_1_calculations](https://drive.google.com/file/d/12uQHWGYf5ZV8nwkltVwIDw3MdCLRTwgO/view?usp=drive_link)
+5. ![step_1_calculations](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_1/step_1_calculations.png)
 6. Reach a receptive field of 16 to 20
 
 #### Result
@@ -31,7 +31,8 @@ Best Test Accuracy: 99.52
 1. The model is not overfitting till 15th epoch. The test accuracy is higher than the train accuracy.
 2. The parameters are very high for a data set like MNIST.
 3. The architecture has only 3X3 convolutions, Max pooling and FC.
-
+![model](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_1/step_1_model.png)
+![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_1/step_1_epochs.png)
 
 #### Step 2
 #### Target
@@ -39,11 +40,14 @@ Best Test Accuracy: 99.52
 2. Reduce the number of parameters
 3. Use Average pooling at the end
 4. Use 1X1 to reduce the dimensions
+![calc](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_2/step_2_calculations.png)
 
 #### Result
 Parameters : 11226
 Best Train Accuracy: 96.79
 Best Test Accuracy: 96.73
+![model](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_2/step_2_model.png)
+![epoch](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_2/step_2_epochs.png)
 
 #### Analysis
 1. The model is not overfitting till 15th epoch. The test accuracy is similar to train accuracy
@@ -56,11 +60,14 @@ Best Test Accuracy: 96.73
 #### Target
 1. Reduce the number of parameters
 2. Use Batch Normalisation and drop out
+![calc](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_3/step_3_calculations.png)
 
 #### Result
 Parameters : 6402
 Best Train Accuracy: 98.56
 Best Test Accuracy: 98.72
+![model](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_3/step_3_model.png)
+![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_3/step_3_epochs.png)
 
 #### Analysis
 1. The model is not overfitting till 15th epoch. The test accuracy is higher than the train accuracy.
@@ -76,11 +83,12 @@ Best Test Accuracy: 98.72
 Parameters : 6402
 Best Train Accuracy: 97.67
 Best Test Accuracy: 97.87
+![epochs[(https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step%204/step_4_epoch.png)
 
 #### Analysis
 1. We have still not reached the required accuracy.
 2. We have to change the number of kernels at different steps probably.
-3. 
+
 
 
 #### Step 5
@@ -88,10 +96,15 @@ Best Test Accuracy: 97.87
 1. Increase Model Capacity
 2. Run up-till 20 epochs to see if we achieve result after 15 epochs
 
+![calc](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_5/step_5_calculations.png)
+
 #### Result
 Parameters : 7738
 Best Train Accuracy: 99.16
 Best Test Accuracy: 99.53
+
+![model](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_5/step_5_model.png)
+![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_5/step_5_epochs.png)
 
 #### Analysis
 1. We achieved the desired result at 17th epoch.
@@ -105,6 +118,8 @@ Best Test Accuracy: 99.53
 Parameters : 7738
 Best Train Accuracy: 99.12
 Best Test Accuracy: 99.53
+
+![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/Screenshot%202023-06-15%20at%2011.37.22%20PM.png)
 
 #### Analysis
 1. We achieved the result constantly after 12th epoch
