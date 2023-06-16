@@ -20,9 +20,9 @@
 6. Reach a receptive field of 16 to 20
 
 ### Result
-Parameters : 428810
-Best Train Accuracy: 99.43
-Best Test Accuracy: 99.52
+1. Parameters : 428810
+2. Best Train Accuracy: 99.28
+3. Best Test Accuracy: 99.38
 
 ### Analysis
 1. The model is not overfitting till 15th epoch. The test accuracy is higher than the train accuracy.
