@@ -116,13 +116,12 @@
 1. Increase Model Capacity
 2. Run up-till 20 epochs to see if we achieve result after 15 epochs
 
-
-#### Result
+### Result
 Parameters : 7738
 Best Train Accuracy: 99.16
 Best Test Accuracy: 99.53
 
-#### Analysis
+### Analysis
 1. We achieved the desired result at 17th epoch.
 2. Lets try increasing the lr slightly to achieve this faster
 
@@ -144,7 +143,7 @@ Best Test Accuracy: 99.53
 2. Best Train Accuracy: 99.12
 3. Best Test Accuracy: 99.53
    
-#### Analysis
+### Analysis
 1. We achieved the result constantly after 12th epoch
 2. No image augmentation
 3. No lr scheduler
