@@ -118,11 +118,11 @@
 
 ### Result
 Parameters : 7738
-Best Train Accuracy: 99.16
+Best Train Accuracy: 99.20
 Best Test Accuracy: 99.53
 
 ### Analysis
-1. We achieved the desired result at 17th epoch.
+1. We achieved the desired result at 15th epoch.
 2. Lets try increasing the lr slightly to achieve this faster
 
 **Receptive feild calculation**
