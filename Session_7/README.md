@@ -1,8 +1,6 @@
-## Assignment from Session 7
+## Assignment from Session 7 - In-Depth Coding Practice
 
-### In-Depth Coding Practice
-
-#### Objective: 
+### Objective: 
 1.  The model Accuracy should be 99.4%  **(this must be consistently shown in your last few epochs, and not a one-time achievement)**
 2. Less than or equal to 15 Epochs
 3. Less than 8000 Parameters
@@ -12,26 +10,32 @@
 7.  Write why have you decided that your target should be what you have decided it to be, and your analysis MUST be correct.
 8. Keep Receptive field calculations handy for each of your models.
 
-#### Solution
-#### Step 1
-#### Target
+### Solution
+### Step 1
+### Target
 1. Modularise the model
 2. Create the First network with Convolution, max pooling and fc layers.
 3. Plot the accuracy Metrics 
 4. Create a table to calculate receptive field, number of parameters
-5. ![step_1_calculations](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_1/step_1_calculations.png)
 6. Reach a receptive field of 16 to 20
 
-#### Result
+### Result
 Parameters : 428810
 Best Train Accuracy: 99.43
 Best Test Accuracy: 99.52
 
-#### Analysis
+### Analysis
 1. The model is not overfitting till 15th epoch. The test accuracy is higher than the train accuracy.
 2. The parameters are very high for a data set like MNIST.
 3. The architecture has only 3X3 convolutions, Max pooling and FC.
+
+**Receptive feild calculation**
+![step_1_calculations](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_1/step_1_calculations.png)
+
+**Model Summary**
 ![model](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_1/step_1_model.png)
+
+**Last few epochs**
 ![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_1/step_1_epochs.png)
 
 #### Step 2
