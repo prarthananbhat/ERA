@@ -93,53 +93,62 @@
 ![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_3/step_3_epochs.png)
 
 
-#### Step 4
-#### Target
+### Step 4
+### Target
 1. Use image augmentation
-2. 
-#### Result
-Parameters : 6402
-Best Train Accuracy: 97.67
-Best Test Accuracy: 97.87
-![epochs[(https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step%204/step_4_epoch.png)
+2. Use the exact same model liske step 3
+
+### Result
+1. Parameters : 6402
+2. Best Train Accuracy: 97.67
+3. Best Test Accuracy: 97.87
 
 #### Analysis
 1. We have still not reached the required accuracy.
 2. We have to change the number of kernels at different steps probably.
 
+**Last few epochs**
+![epochs[(https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step%204/step_4_epoch.png)
 
 
-#### Step 5
-#### Target
+### Step 5
+### Target
 1. Increase Model Capacity
 2. Run up-till 20 epochs to see if we achieve result after 15 epochs
 
-![calc](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_5/step_5_calculations.png)
 
 #### Result
 Parameters : 7738
 Best Train Accuracy: 99.16
 Best Test Accuracy: 99.53
 
-![model](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_5/step_5_model.png)
-![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_5/step_5_epochs.png)
-
 #### Analysis
 1. We achieved the desired result at 17th epoch.
 2. Lets try increasing the lr slightly to achieve this faster
 
-#### Step 6
-#### Target
+**Receptive feild calculation**
+![calc](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_5/step_5_calculations.png)
+
+**Model Summary**
+![model](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_5/step_5_model.png)
+
+**Last few epochs**
+![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_5/step_5_epochs.png)
+
+### Step 6
+### Target
 1. Increase the lr from 0.01 to 0.015
 
-#### Result
-Parameters : 7738
-Best Train Accuracy: 99.12
-Best Test Accuracy: 99.53
-
-![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/Screenshot%202023-06-15%20at%2011.37.22%20PM.png)
-
+### Result
+1. Parameters : 7738
+2. Best Train Accuracy: 99.12
+3. Best Test Accuracy: 99.53
+   
 #### Analysis
 1. We achieved the result constantly after 12th epoch
 2. No image augmentation
 3. No lr scheduler
+
+**Last few epochs**
+![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/Screenshot%202023-06-15%20at%2011.37.22%20PM.png)
+
