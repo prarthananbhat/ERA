@@ -38,26 +38,33 @@ Best Test Accuracy: 99.52
 **Last few epochs**
 ![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_1/step_1_epochs.png)
 
-#### Step 2
-#### Target
+### Step 2
+### Target
 1. Increase the receptive field
 2. Reduce the number of parameters
 3. Use Average pooling at the end
 4. Use 1X1 to reduce the dimensions
-![calc](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_2/step_2_calculations.png)
 
-#### Result
+
+### Result
 Parameters : 11226
 Best Train Accuracy: 96.79
 Best Test Accuracy: 96.73
-![model](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_2/step_2_model.png)
-![epoch](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_2/step_2_epochs.png)
 
-#### Analysis
+### Analysis
 1. The model is not overfitting till 15th epoch. The test accuracy is similar to train accuracy
 2. The parameters are still higher than 8K
 3. We reached a receptive felid of 28
 4. We did not achieve the required accuracy of 99.4
+
+**Receptive feild calculation**
+![calc](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_2/step_2_calculations.png)
+
+**Model Summary**
+![model](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_2/step_2_model.png)
+
+**Last few epochs**
+![epoch](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_2/step_2_epochs.png)
 
 
 #### Step 3
