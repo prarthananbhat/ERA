@@ -72,12 +72,12 @@
 1. Reduce the number of parameters
 2. Use Batch Normalisation and drop out
 
-#### Result
+### Result
 1. Parameters : 6402
 2. Best Train Accuracy: 98.52
 3. Best Test Accuracy: 98.52
 
-#### Analysis
+### Analysis
 1. The model is not overfitting till 15th epoch. The test accuracy is higher than the train accuracy.
 2. The parameters are now less than 8k
 3. We reached a receptive felid of 28
@@ -103,12 +103,12 @@
 2. Best Train Accuracy: 97.67
 3. Best Test Accuracy: 97.87
 
-#### Analysis
+### Analysis
 1. We have still not reached the required accuracy.
 2. We have to change the number of kernels at different steps probably.
 
 **Last few epochs**
-![epochs[(https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step%204/step_4_epoch.png)
+![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step%204/step_4_epoch.png)
 
 
 ### Step 5
