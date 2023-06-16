@@ -67,24 +67,31 @@
 ![epoch](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_2/step_2_epochs.png)
 
 
-#### Step 3
-#### Target
+### Step 3
+### Target
 1. Reduce the number of parameters
 2. Use Batch Normalisation and drop out
-![calc](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_3/step_3_calculations.png)
 
 #### Result
 Parameters : 6402
 Best Train Accuracy: 98.56
 Best Test Accuracy: 98.72
-![model](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_3/step_3_model.png)
-![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_3/step_3_epochs.png)
 
 #### Analysis
 1. The model is not overfitting till 15th epoch. The test accuracy is higher than the train accuracy.
 2. The parameters are now less than 8k
 3. We reached a receptive felid of 28
-4. We have not reached the required accuracy. 
+4. We have not reached the required accuracy.
+
+**Receptive feild calculation**
+![calc](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_3/step_3_calculations.png)
+
+**Model Summary**
+![model](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_3/step_3_model.png)
+
+**Last few epochs**
+![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_3/step_3_epochs.png)
+
 
 #### Step 4
 #### Target
