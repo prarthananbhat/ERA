@@ -73,9 +73,9 @@
 2. Use Batch Normalisation and drop out
 
 #### Result
-Parameters : 6402
-Best Train Accuracy: 98.56
-Best Test Accuracy: 98.72
+1. Parameters : 6402
+2. Best Train Accuracy: 98.52
+3. Best Test Accuracy: 98.52
 
 #### Analysis
 1. The model is not overfitting till 15th epoch. The test accuracy is higher than the train accuracy.
