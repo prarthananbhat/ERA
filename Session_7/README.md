@@ -47,9 +47,9 @@
 
 
 ### Result
-Parameters : 11226
-Best Train Accuracy: 96.79
-Best Test Accuracy: 96.73
+1. Parameters : 11226
+2. Best Train Accuracy: 95.31
+3. Best Test Accuracy: 96.04
 
 ### Analysis
 1. The model is not overfitting till 15th epoch. The test accuracy is similar to train accuracy
