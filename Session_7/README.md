@@ -108,7 +108,7 @@
 2. We have to change the number of kernels at different steps probably.
 
 **Last few epochs**
-![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step%204/step_4_epoch.png)
+![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step%204/step_4_epochs.png)
 
 
 ### Step 5
