@@ -100,8 +100,8 @@
 
 ### Result
 1. Parameters : 6402
-2. Best Train Accuracy: 97.67
-3. Best Test Accuracy: 97.87
+2. Best Train Accuracy: 97.68
+3. Best Test Accuracy: 97.84
 
 ### Analysis
 1. We have still not reached the required accuracy.
