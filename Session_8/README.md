@@ -1,19 +1,19 @@
 ## Assignment from Session 8 - Batch Normalization & Regularization
 
 ### Objective: 
-1. Change the dataset to CIFAR10
-2. Make this network: C1 C2 c3 P1 C3 C4 C5 c6 P2 C7 C8 C9 GAP C10
-   a. Keep the parameter count less than 50000
-   b. Try and add one layer to another
-   c. Max Epochs is 20
+1. Change the dataset to CIFAR10.
+2. Make this network: C1 C2 c3 P1 C3 C4 C5 c6 P2 C7 C8 C9 GAP C10.
+   1. Keep the parameter count less than 50000
+   2. Try and add one layer to another
+   3. Max Epochs is 20
 3. Make 3 versions of the above code (in each case achieve above 70% accuracy):
-   a. Network with Group Normalization
-   b. Network with Layer Normalization
-   c. Network with Batch Normalization
+   1. Network with Group Normalization
+   2. Network with Layer Normalization
+   3. Network with Batch Normalization
 4. Share these details
-   a. Training accuracy for 3 models
-   b. Test accuracy for 3 models
-   c. Find 10 misclassified images for the BN model, and show them as a 5x2 image matrix in 3 separately annotated images. 
+   1. Training accuracy for 3 models
+   2. Test accuracy for 3 models
+   3. Find 10 misclassified images for the BN model, and show them as a 5x2 image matrix in 3 separately annotated images. 
 
 ### Solution
 ### Step 1
@@ -86,7 +86,7 @@
 ### Step 3
 ### Target
 1. Change the batch normalization to group normalization
-2. Use the nn.GroupNorm(2, 16), Which creates 2 groups from 16 kerenels. If our batch size is 32, the we will have 32(kwrnels) * 2(groups) * 2(mean and sd) = 128 parameters
+2. Use the nn.GroupNorm(2, 16), Which creates 2 groups from 16 kerenels. If our batch size is 32, the we will have 32(images) * 2(groups) * 2(mean and sd) = 128 parameters
 
 ### Result
 1. Parameters : 49746 (ideally parameters should have changed)
@@ -99,16 +99,16 @@
 3. We reached a receptive felid of 72
 
 **Receptive feild calculation**
-![step_2_calculations](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/group%20Normailization/gn_receptive%20feild%20calculation.png)
+![gn_calculations](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/group%20Normailization/gn_receptive%20feild%20calculation.png)
 
 **Model Summary**
-![bn_model](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/group%20Normailization/gn_model.png)
+![gn_model](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/group%20Normailization/gn_model.png)
 
 **Last few epochs**
-![bn_epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/group%20Normailization/gn_epochs.png)
+![gn_epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/group%20Normailization/gn_epochs.png)
 
 **Misclassified images**
-![bn_misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/group%20Normailization/gn_missclassified_images.png)
+![gn_misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/group%20Normailization/gn_missclassified_images.png)
 
 **Link to the Notebook**
 [Model with Group Normalization](https://github.com/prarthananbhat/ERA/blob/master/Session_8/S8%20-%20Group%20Normalization%20.ipynb)
@@ -116,59 +116,33 @@
 
 ### Step 4
 ### Target
-1. Use image augmentation
-2. Use the exact same model liske step 3
+1. Change the group normalization to Layer normalization
+2. Use the nn.GroupNorm(1, 16), Which creates 1 groups from 16 kerenels. If our batch size is 32, the we will have 32(images) * 1(groups) * 2(mean and sd) = 64 parameters
 
 ### Result
-1. Parameters : 6402
-2. Best Train Accuracy: 97.68
-3. Best Test Accuracy: 97.84
+1. Parameters : 49746 (ideally parameters should have changed)
+2. Best Train Accuracy: 76.9
+3. Best Test Accuracy: 78.1
 
 ### Analysis
-1. We have still not reached the required accuracy.
-2. We have to change the number of kernels at different steps probably.
+1. The test accuracy is similar to train or slightly higher till 15th epoch
+2. The parameters are now less than 50k and achieved an accuracy of 78.1%
+3. We reached a receptive felid of 72
 
-**Last few epochs**
-![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step%204/step_4_epochs.png)
-
-
-### Step 5
-### Target
-1. Increase Model Capacity
-2. Run up-till 20 epochs to see if we achieve result after 15 epochs
-
-### Result
-Parameters : 7738
-Best Train Accuracy: 99.20
-Best Test Accuracy: 99.53
-
-### Analysis
-1. We achieved the desired result at 15th epoch.
-2. Lets try increasing the lr slightly to achieve this faster
 
 **Receptive feild calculation**
-![calc](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_5/step_5_calculations.png)
+![ln alculations](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/layer%20Normalization/ln_receptive%20feild%20calculations.png)
 
 **Model Summary**
-![model](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_5/step_5_model.png)
+![ln_model](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/layer%20Normalization/Step%202%20Model.png)
 
 **Last few epochs**
-![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_5/step_5_epochs.png)
+![ln_epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/layer%20Normalization/Step%202%20epochs.png)
 
-### Step 6
-### Target
-1. Increase the lr from 0.01 to 0.015
+**Misclassified images**
+![ln_misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/layer%20Normalization/Step%202%20missclassified%20images.png)
 
-### Result
-1. Parameters : 7738
-2. Best Train Accuracy: 99.12
-3. Best Test Accuracy: 99.53
-   
-### Analysis
-1. We achieved the result constantly after 12th epoch
-2. No image augmentation
-3. No lr scheduler
+**Link to the Notebook**
+[Model with Layer Normalization](https://github.com/prarthananbhat/ERA/blob/master/Session_8/S8%20-%20Layer%20Normalization%20.ipynb)
 
-**Last few epochs**
-![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/Screenshot%202023-06-15%20at%2011.37.22%20PM.png)
 
