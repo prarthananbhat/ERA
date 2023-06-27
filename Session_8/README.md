@@ -80,32 +80,38 @@
 ![bn_misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/batch_normalization/bn_misclassified%20images.png)
 
 **Link to the Notebook**
-[Model with Batch Normalization Notebook](https://github.com/prarthananbhat/ERA/blob/master/Session_8/S8%20-%20Batch%20Normalization%20.ipynb)
+[Model with Batch Normalization](https://github.com/prarthananbhat/ERA/blob/master/Session_8/S8%20-%20Batch%20Normalization%20.ipynb)
 
 
 ### Step 3
 ### Target
-1. Reduce the number of parameters
-2. Use Batch Normalisation and drop out
+1. Change the batch normalization to group normalization
+2. Use the nn.GroupNorm(2, 16), Which creates 2 groups from 16 kerenels. If our batch size is 32, the we will have 32(kwrnels) * 2(groups) * 2(mean and sd) = 128 parameters
 
 ### Result
-1. Parameters : 6402
-2. Best Train Accuracy: 81.14
-3. Best Test Accuracy: 80.44
+1. Parameters : 49746 (ideally parameters should have changed)
+2. Best Train Accuracy: 76.29
+3. Best Test Accuracy: 77.59
 
 ### Analysis
-1. The test accuracy is slightly lower than the train accuracy, We can reduce this gap using regularization on Augmentation
-2. The parameters are now less than 50k and achieved an accuracy of 80%
+1. The test accuracy is similar to train or slightly higher till 15th epoch
+2. The parameters are now less than 50k and achieved an accuracy of 77.6%
 3. We reached a receptive felid of 72
 
 **Receptive feild calculation**
-![calc](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step)
+![step_2_calculations](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/group%20Normailization/gn_receptive%20feild%20calculation.png)
 
 **Model Summary**
-![model](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_3/step_3_model.png)
+![bn_model](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/group%20Normailization/gn_model.png)
 
 **Last few epochs**
-![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_3/step_3_epochs.png)
+![bn_epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/group%20Normailization/gn_epochs.png)
+
+**Misclassified images**
+![bn_misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/group%20Normailization/gn_missclassified_images.png)
+
+**Link to the Notebook**
+[Model with Group Normalization](https://github.com/prarthananbhat/ERA/blob/master/Session_8/S8%20-%20Group%20Normalization%20.ipynb)
 
 
 ### Step 4
