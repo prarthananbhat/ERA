@@ -1,6 +1,6 @@
 ## 🤖 Assignment from Session 8 - Batch Normalization & Regularization
 
-### 🏆 Objective: 
+### Objectiv 🏆 
 1. Change the dataset to CIFAR10.
 2. Make this network: C1 C2 c3 P1 C3 C4 C5 c6 P2 C7 C8 C9 GAP C10.
    1. Keep the parameter count less than 50000
@@ -64,7 +64,7 @@ Optimasation method is Stochastic Gradient Decent and the Loss function is  nega
 The final accuracy at 15th  epoch is >70% for train and test set.
 
 
-### Solution: Target Result and Analysis 
+### Solution: Target Result and Analysis ✌✌️
 ### Step 1
 ### 🎯 Target
 1. Change the dataset to CIFAR from MNIST, remove the augmentations on the images
