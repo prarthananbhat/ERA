@@ -1,6 +1,6 @@
-## Assignment from Session 8 - Batch Normalization & Regularization
+## 🤖 Assignment from Session 8 - Batch Normalization & Regularization
 
-### Objective: 
+### 🏆 Objective: 
 1. Change the dataset to CIFAR10.
 2. Make this network: C1 C2 c3 P1 C3 C4 C5 c6 P2 C7 C8 C9 GAP C10.
    1. Keep the parameter count less than 50000
@@ -66,7 +66,7 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 
 ### Solution: Target Result and Analysis 
 ### Step 1
-### Target
+### 🎯 Target
 1. Change the dataset to CIFAR from MNIST, remove the augmentations on the images
 2. Create the First network with Convolution, max pooling and CAP layers. We are not condsidering parameter count or accuracies for the moment
 3. Plot the accuracy Metrics 
@@ -74,12 +74,12 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 6. Reach a receptive field of atleast 32
 7. create a function to plot the missclassified images.
 
-### Result
+### 💪 Result
 1. Parameters : 58314
 2. Best Train Accuracy: 82.05
 3. Best Test Accuracy: 79.03
 
-### Analysis
+### 👀 Analysis
 1. We have got the required test accuracioes
 2. Parameters are little higher than expected
 3. The architecture has only 3X3 ,1X1 convolutions, Max pooling and GAP.
@@ -101,17 +101,17 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 
 
 ### Step 2
-### Target
+### 🎯 Target
 1. Reduce the number of paramters, it should be less than 50K
 2. Use batch noramlization after all 3X3 Colvolutions
 3. Achieve an accuracy for 70 or more within 15 epochs.
 
-### Result
+### 💪 Result
 1. Parameters : 49746
 2. Best Train Accuracy: 81.14
 3. Best Test Accuracy: 80.44
 
-### Analysis
+### 👀 Analysis
 1. The test accuracy is slightly lower than the train accuracy, We can reduce this gap using regularization on Augmentation
 2. The parameters are now less than 50k and achieved an accuracy of 80%
 3. We reached a receptive felid of 72
@@ -133,16 +133,16 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 
 
 ### Step 3
-### Target
+### 🎯 Target
 1. Change the batch normalization to group normalization
 2. Use the nn.GroupNorm(2, 16), Which creates 2 groups from 16 kerenels. If our batch size is 32, the we will have 32(images) * 2(groups) * 2(mean and sd) = 128 parameters
 
-### Result
+### 💪 Result
 1. Parameters : 49746 (ideally parameters should have changed)
 2. Best Train Accuracy: 76.29
 3. Best Test Accuracy: 77.59
 
-### Analysis
+### 👀 Analysis
 1. The test accuracy is similar to train or slightly higher till 15th epoch
 2. The parameters are now less than 50k and achieved an accuracy of 77.6%
 3. We reached a receptive felid of 72
@@ -164,16 +164,16 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 
 
 ### Step 4
-### Target
+### 🎯 Target
 1. Change the group normalization to Layer normalization
 2. Use the nn.GroupNorm(1, 16), Which creates 1 groups from 16 kerenels. If our batch size is 32, the we will have 32(images) * 1(groups) * 2(mean and sd) = 64 parameters
 
-### Result
+### 💪 Result
 1. Parameters : 49746 (ideally parameters should have changed)
 2. Best Train Accuracy: 76.9
 3. Best Test Accuracy: 78.1
 
-### Analysis
+### 👀 Analysis
 1. The test accuracy is similar to train or slightly higher till 15th epoch
 2. The parameters are now less than 50k and achieved an accuracy of 78.1%
 3. We reached a receptive felid of 72
