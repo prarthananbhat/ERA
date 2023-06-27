@@ -1,42 +1,55 @@
-## Assignment from Session 7 - In-Depth Coding Practice
+## Assignment from Session 8 - Batch Normalization & Regularization
 
 ### Objective: 
-1.  The model Accuracy should be 99.4%  **(this must be consistently shown in your last few epochs, and not a one-time achievement)**
-2. Less than or equal to 15 Epochs
-3. Less than 8000 Parameters
-4. Do this using your modular code. Every model that you make must be there in the model.py file as Model_1, Model_2, etc.
-5.  Do this in exactly 3 steps
-6.  Each File must have a "target, result, analysis" TEXT block (either at the start or the end)
-7.  Write why have you decided that your target should be what you have decided it to be, and your analysis MUST be correct.
-8. Keep Receptive field calculations handy for each of your models.
+1. Change the dataset to CIFAR10
+2. Make this network: C1 C2 c3 P1 C3 C4 C5 c6 P2 C7 C8 C9 GAP C10
+   a. Keep the parameter count less than 50000
+   b. Try and add one layer to another
+   c. Max Epochs is 20
+3. Make 3 versions of the above code (in each case achieve above 70% accuracy):
+   a. Network with Group Normalization
+   b. Network with Layer Normalization
+   c. Network with Batch Normalization
+4. Share these details
+   a. Training accuracy for 3 models
+   b. Test accuracy for 3 models
+   c. Find 10 misclassified images for the BN model, and show them as a 5x2 image matrix in 3 separately annotated images. 
 
 ### Solution
 ### Step 1
 ### Target
-1. Modularise the model
-2. Create the First network with Convolution, max pooling and fc layers.
+1. Change the dataset to CIFAR from MNIST, remove the augmentations on the images
+2. Create the First network with Convolution, max pooling and CAP layers. We are not condsidering parameter count or accuracies for the moment
 3. Plot the accuracy Metrics 
 4. Create a table to calculate receptive field, number of parameters
-6. Reach a receptive field of 16 to 20
+6. Reach a receptive field of atleast 32
+7. create a function to plot the missclassified images.
 
 ### Result
-1. Parameters : 428810
-2. Best Train Accuracy: 99.28
-3. Best Test Accuracy: 99.38
+1. Parameters : 58314
+2. Best Train Accuracy: 82.05
+3. Best Test Accuracy: 79.03
 
 ### Analysis
-1. The model is not overfitting till 15th epoch. The test accuracy is higher than the train accuracy.
-2. The parameters are very high for a data set like MNIST.
-3. The architecture has only 3X3 convolutions, Max pooling and FC.
+1. We have got the required test accuracioes
+2. Parameters are little higher than expected
+3. The architecture has only 3X3 ,1X1 convolutions, Max pooling and GAP.
 
 **Receptive feild calculation**
-![step_1_calculations](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_1/step_1_calculations.png)
+![step_1_calculations](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/Step%201/Step%201%20Receptive%20Feild%20Caluculation.png)
 
 **Model Summary**
-![model](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_1/step_1_model.png)
+![model](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/Step%201/Step%201%20Model.png)
 
 **Last few epochs**
-![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_1/step_1_epochs.png)
+![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/Step%201/Step%201%20epochs.png)
+
+**Misclassified images**
+![misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/Step%201/misclassified_images.png)
+
+**Link to the Notebook**
+[Initial Notebook](https://github.com/prarthananbhat/ERA/blob/master/Session_8/S8%20-%20Batch%20Normalization%20.ipynb)
+
 
 ### Step 2
 ### Target
