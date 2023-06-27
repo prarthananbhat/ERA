@@ -15,8 +15,6 @@
    2. Test accuracy for 3 models
    3. Find 10 misclassified images for the BN model, and show them as a 5x2 image matrix in 3 separately annotated images. 
 
-### Solution
-
 ### Dataset
 The CIFAR-10 dataset consists of 60000 32x32 colour images in 10 classes, with 6000 images per class. There are 50000 training images and 10000 test images.
 
@@ -37,59 +35,36 @@ Here are the classes in the dataset, as well as 10 random images from each:
 ```
 
 #### models.py
-Here we define the architecture of our model. 
-We Chose to have 
-1. 4 convolutional layers, with max pool after 2 layers.
-2. 2 fully connected layers at the end.
-3. This model has 593200 parameters
+This file holds all the model definitions (network architecture). 4 models were added as part of this assignm,ent. 
+1. cifar_model - *Inital model for CIFAR 10*
+2. cifar_model_bn - *Model with Batch Normalization*
+3. cifar_model_ln - *Model with Layer Normalization*
+4. cifar_model_gn - *Model with Group Normalization*
+The architecture for all the models are similar, follows C1 C2 c3 P1 C3 C4 C5 c6 P2 C7 C8 C9 GAP c10.
 
-Below is a snapshot of the model
+#### utils.py
+This files stores the utility function. 2 additional plotting functions are added
+**plot_samples_cifar** function plots 12 images from the data loader
+**plot_misclassified_images** plots the 25 images that are wrongly specified with titles like *Predicted : Cat, Actual Dog*
 
-----------------------------------------------------------------
-        Layer (type)               Output Shape         Param #
-----------------------------------------------------------------
-            Conv2d-1           [-1, 32, 26, 26]             320
-            Conv2d-2           [-1, 64, 24, 24]          18,496
-            Conv2d-3          [-1, 128, 10, 10]          73,856
-            Conv2d-4            [-1, 256, 8, 8]         295,168
-            Linear-5                   [-1, 50]         204,850
-            Linear-6                   [-1, 10]             510
-----------------------------------------------------------------
-
-Total params: 593,200                                           
-Trainable params: 593,200
-Non-trainable params: 0
-Input size (MB): 0.00
-Forward/backward pass size (MB): 0.67
-Params size (MB): 2.26
-Estimated Total Size (MB): 2.94
-
-#### Utils.py
-This files stores the utility function. We have 2 plotting functions in this file.
-plot_samples function plots 12 images from the data loader
-Plot accuracy metrics plot the training and testing loss and accuracy curves for the complete run (all epochs)
-
-
-#### S5.ipynb 
-is a notebook that acts a main function call and includes the following steps
+#### Notebooks S8 - Layer Normalization .ipynb, S8 - Batch Normalization .ipynb, S8 - Group Normalization .ipynb
+These notebooks that act a main function call and includes the following steps
 
 1. Google drive set up to store your code and link the drive to the Notebook.
 2. Define the transformation for test and train dataset. 
-3. Download the MNIST data from the datasets package and apply the transformation.
- The image size is 28 X 28 and we have 60K images in train and 10K images in the test set
+3. Download the CIFAR10 data from the datasets package and apply the transformation.
+ The image size is 32 X 32 and we have 60K images in train and 10K images in the test set
 
 4. Plot a sample set of images using the functions rom utils library
-![smaple_images](https://github.com/prarthananbhat/ERA/blob/master/Session_5/misc/download.png)
+![smaple_images](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/Sample%20Images.png)
 
 6. Run the model
-With a batch size of 512 we are running 20 epochs.
-Optimasation method is Stochastic Gradient Decent and the Loss function is Cross entropy
-We have also used a lr scheduler to change our learning rate after 15 epochs.
-The final accuracy at 20th epoch is 99.21% for train and 99.19$ for test set.
-![smaple_images](https://github.com/prarthananbhat/ERA/blob/master/Session_5/misc/accuracy_metrics.png)
+With a batch size of 512 we are running 15 epochs.
+Optimasation method is Stochastic Gradient Decent and the Loss function is  negative log likelihood loss
+The final accuracy at 15th  epoch is >70% for train and test set.
 
 
-
+### Solution: Target Result and Analysis 
 ### Step 1
 ### Target
 1. Change the dataset to CIFAR from MNIST, remove the augmentations on the images
