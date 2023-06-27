@@ -53,31 +53,34 @@
 
 ### Step 2
 ### Target
-1. Increase the receptive field
-2. Reduce the number of parameters
-3. Use Average pooling at the end
-4. Use 1X1 to reduce the dimensions
-
+1. Reduce the number of paramters, it should be less than 50K
+2. Use batch noramlization after all 3X3 Colvolutions
+3. Achieve an accuracy for 70 or more within 15 epochs.
 
 ### Result
-1. Parameters : 11226
-2. Best Train Accuracy: 95.31
-3. Best Test Accuracy: 96.04
+1. Parameters : 49746
+2. Best Train Accuracy: 81.14
+3. Best Test Accuracy: 80.44
 
 ### Analysis
-1. The model is not overfitting till 15th epoch. The test accuracy is similar to train accuracy
-2. The parameters are still higher than 8K
-3. We reached a receptive felid of 28
-4. We did not achieve the required accuracy of 99.4
+1. The test accuracy is slightly lower than the train accuracy, We can reduce this gap using regularization on Augmentation
+2. The parameters are now less than 50k and achieved an accuracy of 80%
+3. We reached a receptive felid of 72
 
 **Receptive feild calculation**
-![calc](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_2/step_2_calculations.png)
+![step_2_calculations](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/batch_normalization/BN_receptive%20feild%20calculation.png)
 
 **Model Summary**
-![model](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_2/step_2_model.png)
+![bn_model](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/batch_normalization/bn_model.png)
 
 **Last few epochs**
-![epoch](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_2/step_2_epochs.png)
+![bn_epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/batch_normalization/bn_epochs.png)
+
+**Misclassified images**
+![bn_misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/batch_normalization/bn_misclassified%20images.png)
+
+**Link to the Notebook**
+[Model with Batch Normalization Notebook](https://github.com/prarthananbhat/ERA/blob/master/Session_8/S8%20-%20Batch%20Normalization%20.ipynb)
 
 
 ### Step 3
@@ -87,17 +90,16 @@
 
 ### Result
 1. Parameters : 6402
-2. Best Train Accuracy: 98.52
-3. Best Test Accuracy: 98.52
+2. Best Train Accuracy: 81.14
+3. Best Test Accuracy: 80.44
 
 ### Analysis
-1. The model is not overfitting till 15th epoch. The test accuracy is higher than the train accuracy.
-2. The parameters are now less than 8k
-3. We reached a receptive felid of 28
-4. We have not reached the required accuracy.
+1. The test accuracy is slightly lower than the train accuracy, We can reduce this gap using regularization on Augmentation
+2. The parameters are now less than 50k and achieved an accuracy of 80%
+3. We reached a receptive felid of 72
 
 **Receptive feild calculation**
-![calc](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_3/step_3_calculations.png)
+![calc](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step)
 
 **Model Summary**
 ![model](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step_3/step_3_model.png)
