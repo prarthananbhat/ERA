@@ -23,21 +23,18 @@ Here are the classes in the dataset, as well as 10 random images from each:
 ```
 .
 |-- README.md
-|-- S8 - Batch Normalization .ipynb
-|-- S8 - Group Normalization .ipynb
-|-- S8 - Layer Normalization .ipynb
+|-- S9 - base model.ipynb
+|-- S9_model_1.ipynb
 |-- models.py
 |-- utils.py
 |-- misc
 ```
 
 #### models.py
-This file holds all the model definitions (network architecture). 4 models were added as part of this assignm,ent. 
-1. cifar_model - *Inital model for CIFAR 10*
-2. cifar_model_bn - *Model with Batch Normalization*
-3. cifar_model_ln - *Model with Layer Normalization*
-4. cifar_model_gn - *Model with Group Normalization*
-The architecture for all the models are similar, follows C1 C2 c3 P1 C3 C4 C5 c6 P2 C7 C8 C9 GAP c10.
+This file holds all the model definitions (network architecture). 2 models were added as part of this assignm,ent. 
+1. s9_base_model - *Inital model with strided convolution*
+2. s9_model_1 - *Model with Depthwise convolution and dialated convolution*
+
 
 #### utils.py
 This files stores the utility function. 2 additional plotting functions are added
