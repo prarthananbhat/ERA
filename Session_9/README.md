@@ -1,19 +1,16 @@
-## 🤖 Assignment from Session 8 - Batch Normalization & Regularization
+## 🤖 Assignment from Session 9 - Advanced Convolutions, Data Augmentation and Visualization
 
 ### Objectiv 🏆 
-1. Change the dataset to CIFAR10.
-2. Make this network: C1 C2 c3 P1 C3 C4 C5 c6 P2 C7 C8 C9 GAP C10.
-   1. Keep the parameter count less than 50000
-   2. Try and add one layer to another
-   3. Max Epochs is 20
-3. Make 3 versions of the above code (in each case achieve above 70% accuracy):
-   1. Network with Group Normalization
-   2. Network with Layer Normalization
-   3. Network with Batch Normalization
-4. Share these details
-   1. Training accuracy for 3 models
-   2. Test accuracy for 3 models
-   3. Find 10 misclassified images for the BN model, and show them as a 5x2 image matrix in 3 separately annotated images. 
+1. Make this network for CIFA10 by using Convolutions with stride 2 instead of Maxpooling
+2. Reach a Receptive feild of 44 or more
+3. one of the layers must use Depthwise Separable Convolution
+4. one of the layers must use Dilated Convolution
+5. use GAP (compulsory):- add FC after GAP to target #of classes (optional)
+6. use albumentation library and apply:
+   1. horizontal flip
+   2. shiftScaleRotate
+   3. coarseDropout (max_holes = 1, max_height=16px, max_width=1, min_holes = 1, min_height=16px, min_width=16px, fill_value=(mean of your dataset), mask_fill_value = None)
+7. achieve 85% accuracy, as many epochs as you want. Total Params to be less than 200k.
 
 ### Dataset
 The CIFAR-10 dataset consists of 60000 32x32 colour images in 10 classes, with 6000 images per class. There are 50000 training images and 10000 test images.
@@ -67,12 +64,8 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 ### Solution: Target Result and Analysis ✌✌️
 ### Step 1
 ### 🎯 Target
-1. Change the dataset to CIFAR from MNIST, remove the augmentations on the images
-2. Create the First network with Convolution, max pooling and CAP layers. We are not condsidering parameter count or accuracies for the moment
-3. Plot the accuracy Metrics 
-4. Create a table to calculate receptive field, number of parameters
-6. Reach a receptive field of atleast 32
-7. create a function to plot the missclassified images.
+1. Create a base model with convolutions of stride 2 instead of max pooling in all the 3 convolution blocks
+2. Experiment with 15 epochs and observe the accuracies
 
 ### 💪 Result
 1. Parameters : 58314
@@ -80,31 +73,35 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 3. Best Test Accuracy: 79.03
 
 ### 👀 Analysis
-1. We have got the required test accuracioes
-2. Parameters are little higher than expected
-3. The architecture has only 3X3 ,1X1 convolutions, Max pooling and GAP.
+1. The test accuracy is fluctuating till 15th epoch. The gap between the test and train accuracy is also fluctuating.
+2. The receptive field at the final layer is 47
+3. Had to use a couple of 4X4 Convolutions to have channel sizes of decimals like (16.5)
+4. The accuracy was not consistently above 85% for the last few epochs
+
 
 **Receptive feild calculation**
-![step_1_calculations](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/Step%201/Step%201%20Receptive%20Feild%20Caluculation.png)
+
 
 **Model Summary**
-![model](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/Step%201/Step%201%20Model.png)
+
 
 **Last few epochs**
-![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/Step%201/Step%201%20epochs.png)
+
 
 **Misclassified images**
-![misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/Step%201/misclassified_images.png)
+
 
 **Link to the Notebook**
-[Initial Notebook](https://github.com/prarthananbhat/ERA/blob/master/Session_8/S8%20-%20Batch%20Normalization%20.ipynb)
+
 
 
 ### Step 2
 ### 🎯 Target
-1. Reduce the number of paramters, it should be less than 50K
-2. Use batch noramlization after all 3X3 Colvolutions
-3. Achieve an accuracy for 70 or more within 15 epochs.
+1. Add a dilated convolution instead of a 3 X 3 convolution of stride 2
+2. Experiment with 20 epochs and observe the accuracies
+3. Add a depthwise seperable convolution
+4. Add Augmentation
+5. Run for 50 epochs
 
 ### 💪 Result
 1. Parameters : 49746
@@ -112,9 +109,9 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 3. Best Test Accuracy: 80.44
 
 ### 👀 Analysis
-1. The test accuracy is slightly lower than the train accuracy, We can reduce this gap using regularization on Augmentation
-2. The parameters are now less than 50k and achieved an accuracy of 80%
-3. We reached a receptive felid of 72
+1. We reached the 85% accuracy at 50 the epoch.
+2. USe albumenttaion for augmentation
+3. Re look at the architecture again, avoid 1X1 to reduce the channels
 
 **Receptive feild calculation**
 ![step_2_calculations](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/batch_normalization/BN_receptive%20feild%20calculation.png)
@@ -126,72 +123,10 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 ![bn_epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/batch_normalization/bn_epochs.png)
 
 **Misclassified images**
-![bn_misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/batch_normalization/bn_misclassified%20images.png)
+![bn_misclassified_images]()
 
 **Link to the Notebook**
-[Model with Batch Normalization](https://github.com/prarthananbhat/ERA/blob/master/Session_8/S8%20-%20Batch%20Normalization%20.ipynb)
+[Model with Batch Normalization](https://github.com/prarthananbhat/ERA/blob/master/Session_9/S9_model_1.ipynb)
 
-
-### Step 3
-### 🎯 Target
-1. Change the batch normalization to group normalization
-2. Use the nn.GroupNorm(2, 16), Which creates 2 groups from 16 kerenels. If our batch size is 32, the we will have 32(images) * 2(groups) * 2(mean and sd) = 128 parameters
-
-### 💪 Result
-1. Parameters : 49746 (ideally parameters should have changed)
-2. Best Train Accuracy: 76.29
-3. Best Test Accuracy: 77.59
-
-### 👀 Analysis
-1. The test accuracy is similar to train or slightly higher till 15th epoch
-2. The parameters are now less than 50k and achieved an accuracy of 77.6%
-3. We reached a receptive felid of 72
-
-**Receptive feild calculation**
-![gn_calculations](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/group%20Normailization/gn_receptive%20feild%20calculation.png)
-
-**Model Summary**
-![gn_model](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/group%20Normailization/gn_model.png)
-
-**Last few epochs**
-![gn_epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/group%20Normailization/gn_epochs.png)
-
-**Misclassified images**
-![gn_misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/group%20Normailization/gn_missclassified_images.png)
-
-**Link to the Notebook**
-[Model with Group Normalization](https://github.com/prarthananbhat/ERA/blob/master/Session_8/S8%20-%20Group%20Normalization%20.ipynb)
-
-
-### Step 4
-### 🎯 Target
-1. Change the group normalization to Layer normalization
-2. Use the nn.GroupNorm(1, 16), Which creates 1 groups from 16 kerenels. If our batch size is 32, the we will have 32(images) * 1(groups) * 2(mean and sd) = 64 parameters
-
-### 💪 Result
-1. Parameters : 49746 (ideally parameters should have changed)
-2. Best Train Accuracy: 76.9
-3. Best Test Accuracy: 78.1
-
-### 👀 Analysis
-1. The test accuracy is similar to train or slightly higher till 15th epoch
-2. The parameters are now less than 50k and achieved an accuracy of 78.1%
-3. We reached a receptive felid of 72
-
-
-**Receptive feild calculation**
-![ln alculations](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/layer%20Normalization/ln_receptive%20feild%20calculations.png)
-
-**Model Summary**
-![ln_model](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/layer%20Normalization/Step%202%20Model.png)
-
-**Last few epochs**
-![ln_epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/layer%20Normalization/Step%202%20epochs.png)
-
-**Misclassified images**
-![ln_misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/layer%20Normalization/Step%202%20missclassified%20images.png)
-
-**Link to the Notebook**
-[Model with Layer Normalization](https://github.com/prarthananbhat/ERA/blob/master/Session_8/S8%20-%20Layer%20Normalization%20.ipynb)
 
 
