@@ -113,17 +113,14 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 2. USe albumenttaion for augmentation
 3. Re look at the architecture again, avoid 1X1 to reduce the channels
 
-**Receptive feild calculation**
-![step_2_calculations](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/batch_normalization/BN_receptive%20feild%20calculation.png)
-
 **Model Summary**
-![bn_model](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/batch_normalization/bn_model.png)
+![bn_model](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%202/model.png)
 
 **Last few epochs**
-![bn_epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/batch_normalization/bn_epochs.png)
+![bn_epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%202/epochs.png)
 
 **Misclassified images**
-![bn_misclassified_images]()
+![bn_misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%202/missclassified%20images.png)
 
 **Link to the Notebook**
 [Model with Batch Normalization](https://github.com/prarthananbhat/ERA/blob/master/Session_9/S9_model_1.ipynb)
