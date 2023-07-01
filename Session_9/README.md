@@ -113,6 +113,9 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 2. USe albumenttaion for augmentation
 3. Re look at the architecture again, avoid 1X1 to reduce the channels
 
+**Receptive feild calculation**
+![receptive_feild](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%202/Receptive%20Feild%20Calculations.png)
+
 **Model Summary**
 ![bn_model](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%202/model.png)
 
