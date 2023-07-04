@@ -477,23 +477,7 @@ class s9_model_1(nn.Module):
     def __init__(self):
         super(s9_model_1, self).__init__()
         self.conv1 = nn.Sequential(
-                  nn.Conv2d(3, 16, 3, padding=1),
-                  nn.ReLU(),
-                  nn.BatchNorm2d(16),
-                  nn.Conv2d(16, 32, 3, padding=1),
-                  nn.ReLU(),
-                  nn.BatchNorm2d(32),
-                  nn.Conv2d(32, 32, 4, padding=1),
-                  nn.ReLU(),
-                  nn.BatchNorm2d(32),
-                  nn.Conv2d(32, 32, 3, padding=1, stride = 1, dialation = 1),
-                  nn.ReLU(),
-                  nn.BatchNorm2d(32),    
-                  nn.Conv2d(32, 16, 1),
-                  # nn.Dropout(0.10)
-              )
-        self.conv2 = nn.Sequential(
-                  nn.Conv2d(16, 32, 3, padding=1),
+                  nn.Conv2d(3, 32, 3, padding=1),
                   nn.ReLU(),
                   nn.BatchNorm2d(32),
                   nn.Conv2d(32, 32, 3, padding=1),
@@ -501,11 +485,27 @@ class s9_model_1(nn.Module):
                   nn.BatchNorm2d(32),
                   nn.Conv2d(32, 32, 4, padding=1),
                   nn.ReLU(),
-                  nn.BatchNorm2d(32),                 
-                  nn.Conv2d(32, 32, 3, padding=1, stride = 2, dial),
+                  nn.BatchNorm2d(32),
+                  nn.Conv2d(32,32 , 3, padding=1, stride = 1, dilation = 1),
                   nn.ReLU(),
-                  nn.BatchNorm2d(32),                 
+                  nn.BatchNorm2d(32),
                   nn.Conv2d(32, 16, 1),
+                  # nn.Dropout(0.10)
+              )
+        self.conv2 = nn.Sequential(
+                  nn.Conv2d(16, 64, 3, padding=1),
+                  nn.ReLU(),
+                  nn.BatchNorm2d(64),
+                  nn.Conv2d(64, 64, 3, padding=1),
+                  nn.ReLU(),
+                  nn.BatchNorm2d(64),
+                  nn.Conv2d(64, 64, 3, padding=1),
+                  nn.ReLU(),
+                  nn.BatchNorm2d(64),
+                  nn.Conv2d(64, 64, 3, padding=1, stride = 2, dilation = 1),
+                  nn.ReLU(),
+                  nn.BatchNorm2d(64),
+                  nn.Conv2d(64, 16, 1),
                   # nn.Dropout(0.10)
               )
         self.conv3 = nn.Sequential(
@@ -515,14 +515,18 @@ class s9_model_1(nn.Module):
                   nn.Conv2d(32, 32, 3, padding=1),
                   nn.ReLU(),
                   nn.BatchNorm2d(32),
-                  nn.Conv2d(32, 32, 4, padding=1),
+                  nn.Conv2d(32, 32, 3, padding=1),
                   nn.ReLU(),
                   nn.BatchNorm2d(32),
-                  nn.Conv2d(32, 32, 3, padding=1, stride = 2),
+                  nn.Conv2d(32, 32, 3, padding=1, stride = 2, dilation = 1),
                   nn.ReLU(),
                   nn.BatchNorm2d(32),
-                  nn.AvgPool2d(4,4),
-                  nn.Conv2d(32, 10, 1),
+                  nn.Conv2d(in_channels=32, out_channels=32, kernel_size=3, padding=1, groups=32),
+                  nn.Conv2d(in_channels=32, out_channels=16, kernel_size=1),
+                  nn.ReLU(),
+                  nn.BatchNorm2d(16),
+                  nn.AvgPool2d(5,5),
+                  nn.Conv2d(16, 10, 1),
               )
 
     def forward(self, x):
