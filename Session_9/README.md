@@ -123,7 +123,7 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 ![bn_misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%202/missclassified%20images.png)
 
 **Link to the Notebook**
-[Model with Augmentation](https://github.com/prarthananbhat/ERA/blob/master/Session_9/S9%20-%20model_1)
+[Model with Augmentation](https://github.com/prarthananbhat/ERA/blob/master/Session_9/S9_model_1.ipynb)
 
 
 
