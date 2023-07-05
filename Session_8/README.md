@@ -65,42 +65,8 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 
 
 ### Solution: Target Result and Analysis ✌✌️
+
 ### Step 1
-### 🎯 Target
-1. Change the dataset to CIFAR from MNIST, remove the augmentations on the images
-2. Create the First network with Convolution, max pooling and CAP layers. We are not condsidering parameter count or accuracies for the moment
-3. Plot the accuracy Metrics 
-4. Create a table to calculate receptive field, number of parameters
-6. Reach a receptive field of atleast 32
-7. create a function to plot the missclassified images.
-
-### 💪 Result
-1. Parameters : 58314
-2. Best Train Accuracy: 82.05
-3. Best Test Accuracy: 79.03
-
-### 👀 Analysis
-1. We have got the required test accuracioes
-2. Parameters are little higher than expected
-3. The architecture has only 3X3 ,1X1 convolutions, Max pooling and GAP.
-
-**Receptive feild calculation**
-![step_1_calculations](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/Step%201/Step%201%20Receptive%20Feild%20Caluculation.png)
-
-**Model Summary**
-![model](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/Step%201/Step%201%20Model.png)
-
-**Last few epochs**
-![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/Step%201/Step%201%20epochs.png)
-
-**Misclassified images**
-![misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/Step%201/misclassified_images.png)
-
-**Link to the Notebook**
-[Initial Notebook](https://github.com/prarthananbhat/ERA/blob/master/Session_8/S8%20-%20Batch%20Normalization%20.ipynb)
-
-
-### Step 2
 ### 🎯 Target
 1. Change the dataset to CIFAR from MNIST, remove the augmentations on the images
 2. Create the First network with Convolution, max pooling and CAP layers. We are not condsidering parameter count or accuracies for the moment
@@ -138,7 +104,7 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 [Model with Batch Normalization](https://github.com/prarthananbhat/ERA/blob/master/Session_8/S8%20-%20Batch%20Normalization%20.ipynb)
 
 
-### Step 3
+### Step 2
 ### 🎯 Target
 1. Change the batch normalization to group normalization
 2. Use the nn.GroupNorm(2, 16), Which creates 2 groups from 16 kerenels. If our batch size is 32, the we will have 32(images) * 2(groups) * 2(mean and sd) = 128 parameters
@@ -169,7 +135,7 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 [Model with Group Normalization](https://github.com/prarthananbhat/ERA/blob/master/Session_8/S8%20-%20Group%20Normalization%20.ipynb)
 
 
-### Step 4
+### Step 3
 ### 🎯 Target
 1. Change the group normalization to Layer normalization
 2. Use the nn.GroupNorm(1, 16), Which creates 1 groups from 16 kerenels. If our batch size is 32, the we will have 32(images) * 1(groups) * 2(mean and sd) = 64 parameters
