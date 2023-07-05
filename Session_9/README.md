@@ -148,37 +148,38 @@ Optimasation method is Stochastic Gradient Decent and the Loss function is  nega
 
 ### Step 3
 ### 🎯 Target
-1. Add a dilated convolution instead of a 3 X 3 convolution of stride 2
-2. Experiment with 50 epochs and observe the accuracies
-3. Add a depthwise seperable convolution
-4. Add Augmentation from pytorch library
-   1.Random Rotation, Random Crop, Horizontal flip and Random Affine 
-6. Run for 50 epochs
+1. Use Augmentation from albumentation package
+   1. ShiftScaleRotate
+   2. HorizontalFlip
+   3. CoarseDropout   
 
 ### 💪 Result
-1. Parameters : 
-2. Best Train Accuracy: 81.84
-3. Best Test Accuracy: 84.63
+1. Parameters : 191898
+2. Best Train Accuracy: 78.17
+3. Best Test Accuracy: 83.02
 
 ### 👀 Analysis
-1. We reached the 84.63% accuracy at 50 the epoch.
+1. We reached the 83% accuracy at 50 the epoch.
 2. Thr overfitting was reduced after adding augmentation
-3. The epochs were quite slow, due to trasformations
+3. The albumentation transforms were faster compared to pytorch transfomrations
+
+**Transformed Images**
+![transformed_images](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%203/sample_transformed_images.png)
 
 **Receptive feild calculation**
-![receptive_feild]()
+![receptive_feild](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%203/missclassified_images.png)
 
 **Model Summary**
-![bn_model]()
+![model](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%203/model.png)
 
 **Last few epochs**
-![bn_epochs]()
+![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%203/epochs.png)
 
 **Misclassified images**
-![bn_misclassified_images]()
+![misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%203/missclassified_images.png)
 
 **Link to the Notebook**
-[Model with Augmentation]()
+[Model with Augmentation](https://github.com/prarthananbhat/ERA/blob/master/Session_9/S9_model_2.ipynb)
 
 
 
