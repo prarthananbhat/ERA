@@ -167,7 +167,7 @@ Optimasation method is Stochastic Gradient Decent and the Loss function is  nega
 ![transformed_images](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%203/sample_transformed_images.png)
 
 **Receptive feild calculation**
-![receptive_feild](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%203/missclassified_images.png)
+![receptive_feild](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%203/receptive%20feild%20calculations.png)
 
 **Model Summary**
 ![model](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%203/model.png)
