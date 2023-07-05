@@ -21,11 +21,11 @@
 
 ### Result
 1. Parameters : 428810
-2. Best Train Accuracy: 99.28
-3. Best Test Accuracy: 99.38
+2. Best Train Accuracy: 99.30
+3. Best Test Accuracy: 98.90
 
 ### Analysis
-1. The model is not overfitting till 15th epoch. The test accuracy is higher than the train accuracy.
+1. The model is overfitting till 15th epoch. The train accuracy is higher than the test accuracy.
 2. The parameters are very high for a data set like MNIST.
 3. The architecture has only 3X3 convolutions, Max pooling and FC.
 
@@ -48,8 +48,8 @@
 
 ### Result
 1. Parameters : 11226
-2. Best Train Accuracy: 95.31
-3. Best Test Accuracy: 96.04
+2. Best Train Accuracy: 95.78
+3. Best Test Accuracy: 96.53
 
 ### Analysis
 1. The model is not overfitting till 15th epoch. The test accuracy is similar to train accuracy
@@ -74,8 +74,8 @@
 
 ### Result
 1. Parameters : 6402
-2. Best Train Accuracy: 98.52
-3. Best Test Accuracy: 98.52
+2. Best Train Accuracy: 98.62
+3. Best Test Accuracy: 98.66
 
 ### Analysis
 1. The model is not overfitting till 15th epoch. The test accuracy is higher than the train accuracy.
@@ -100,15 +100,15 @@
 
 ### Result
 1. Parameters : 6402
-2. Best Train Accuracy: 97.68
-3. Best Test Accuracy: 97.84
+2. Best Train Accuracy: 98.07
+3. Best Test Accuracy: 98.79
 
 ### Analysis
 1. We have still not reached the required accuracy.
 2. We have to change the number of kernels at different steps probably.
 
 **Last few epochs**
-![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step%204/step_4_epochs.png)
+![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/step%204/step_4_epoch.png)
 
 
 ### Step 5
@@ -118,11 +118,11 @@
 
 ### Result
 Parameters : 7738
-Best Train Accuracy: 99.20
-Best Test Accuracy: 99.53
+Best Train Accuracy: 98.58
+Best Test Accuracy: 98.97
 
 ### Analysis
-1. We achieved the desired result at 15th epoch.
+1. We have achieved the desired result at 15th epoch.
 2. Lets try increasing the lr slightly to achieve this faster
 
 **Receptive feild calculation**
@@ -137,17 +137,17 @@ Best Test Accuracy: 99.53
 ### Step 6
 ### Target
 1. Increase the lr from 0.01 to 0.015
+2. Add lr scheduler
 
 ### Result
 1. Parameters : 7738
-2. Best Train Accuracy: 99.12
-3. Best Test Accuracy: 99.53
+2. Best Train Accuracy: 98.74
+3. Best Test Accuracy: 99.28
    
 ### Analysis
-1. We achieved the result constantly after 12th epoch
-2. No image augmentation
-3. No lr scheduler
+1. We have achieved the result yet
+
 
 **Last few epochs**
-![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/Screenshot%202023-06-15%20at%2011.37.22%20PM.png)
+![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_7/misc/Step_6/step_6_epochs.png)
 
