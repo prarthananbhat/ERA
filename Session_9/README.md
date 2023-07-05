@@ -99,7 +99,7 @@ Optimasation method is Stochastic Gradient Decent and the Loss function is  nega
 **Misclassified images**
 ![misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%201/missclassified%20images.png)
 
-**Misclassified images**
+**Loss Curves**
 ![loss_curves](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%201/base_model_loss_curves.png)
 
 **Link to the Notebook**
