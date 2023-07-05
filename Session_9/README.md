@@ -25,8 +25,11 @@ Here are the classes in the dataset, as well as 10 random images from each:
 |-- README.md
 |-- S9 - base model.ipynb
 |-- S9_model_1.ipynb
+|-- S9_model_2.ipynb
 |-- models.py
 |-- utils.py
+|-- dataset.py
+|-- transform.py
 |-- misc
 ```
 
@@ -34,6 +37,7 @@ Here are the classes in the dataset, as well as 10 random images from each:
 This file holds all the model definitions (network architecture). 2 models were added as part of this assignm,ent. 
 1. s9_base_model - *Inital model with strided convolution*
 2. s9_model_1 - *Model with Depthwise convolution and dialated convolution*
+3. s9_model_2 - *Model with Depthwise convolution and dialated convolution and augmentations from albumentation*
 
 
 #### utils.py
@@ -41,7 +45,15 @@ This files stores the utility function. 2 additional plotting functions are adde
 **plot_samples_cifar** function plots 12 images from the data loader
 **plot_misclassified_images** plots the 25 images that are wrongly specified with titles like *Predicted : Cat, Actual Dog*
 
-#### Notebooks S8 - Layer Normalization .ipynb, S8 - Batch Normalization .ipynb, S8 - Group Normalization .ipynb
+#### dataset.py
+Two classes are defined here,
+1. **Unormalise Class** to denormalise the images using standard deviation and mean
+2. **cifardataset class** to create a custom dataset with albumentation transforms.
+
+#### transform.py
+We have two set of transforms in this file, One from the pytorch transforms library and other from the albumentations Library
+
+#### Notebooks S9 - base model.ipynb .ipynb, S9_model_1.ipynb, S9_model_2.ipynb
 These notebooks that act a main function call and includes the following steps
 
 1. Google drive set up to store your code and link the drive to the Notebook.
@@ -55,40 +67,43 @@ These notebooks that act a main function call and includes the following steps
 6. Run the model
 With a batch size of 512 we are running 15 epochs.
 Optimasation method is Stochastic Gradient Decent and the Loss function is  negative log likelihood loss
-The final accuracy at 15th  epoch is >70% for train and test set.
 
 
 ### Solution: Target Result and Analysis ✌✌️
 ### Step 1
 ### 🎯 Target
 1. Create a base model with convolutions of stride 2 instead of max pooling in all the 3 convolution blocks
-2. Experiment with 15 epochs and observe the accuracies
+2. Experiment with 50 epochs and observe the accuracies
+3. Parameters should be less than 200K
 
 ### 💪 Result
-1. Parameters : 58314
-2. Best Train Accuracy: 82.05
-3. Best Test Accuracy: 79.03
+1. Parameters : 111978
+2. Best Train Accuracy: 98.04
+3. Best Test Accuracy: 77.4
 
 ### 👀 Analysis
-1. The test accuracy is fluctuating till 15th epoch. The gap between the test and train accuracy is also fluctuating.
+1. Not a great model, Overfits like crazy 
 2. The receptive field at the final layer is 47
 3. Had to use a couple of 4X4 Convolutions to have channel sizes of decimals like (16.5)
-4. The accuracy was not consistently above 85% for the last few epochs
-
+4. After 35th epoch we see that test accuracies were decresing
 
 **Receptive feild calculation**
-
+![receptive_feild](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%201/receptive%20feild%20calculations.png)
 
 **Model Summary**
-
+![model](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%201/base_model.png)
 
 **Last few epochs**
-
+![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%201/base_model_epochs.png)
 
 **Misclassified images**
+![misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%201/missclassified%20images.png)
 
+**Misclassified images**
+![loss_curves](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%201/base_model_loss_curves.png)
 
 **Link to the Notebook**
+[Base model](https://github.com/prarthananbhat/ERA/blob/master/Session_9/S9%20-%20base%20model.ipynb)
 
 
 
