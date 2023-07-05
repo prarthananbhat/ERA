@@ -102,18 +102,24 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 
 ### Step 2
 ### 🎯 Target
-1. Reduce the number of paramters, it should be less than 50K
+1. Change the dataset to CIFAR from MNIST, remove the augmentations on the images
+2. Create the First network with Convolution, max pooling and CAP layers. We are not condsidering parameter count or accuracies for the moment
+3. Plot the accuracy Metrics 
+4. Create a table to calculate receptive field, number of parameters
+6. Reach a receptive field of atleast 32
+7. create a function to plot the missclassified images.
+8. The number of paramters, it should be less than 50K
 2. Use batch noramlization after all 3X3 Colvolutions
-3. Achieve an accuracy for 70 or more within 15 epochs.
+3. Achieve an accuracy for 70 or more within 20 epochs.
 
 ### 💪 Result
 1. Parameters : 49746
-2. Best Train Accuracy: 81.14
-3. Best Test Accuracy: 80.44
+2. Best Train Accuracy: 84.14
+3. Best Test Accuracy: 74.38
 
 ### 👀 Analysis
-1. The test accuracy is slightly lower than the train accuracy, We can reduce this gap using regularization on Augmentation
-2. The parameters are now less than 50k and achieved an accuracy of 80%
+1. The model is overfitting, after 15th epoch the losses are increasing
+2. The target of 70% is acheieved within 20 epochs
 3. We reached a receptive felid of 72
 
 **Receptive feild calculation**
@@ -139,12 +145,12 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 
 ### 💪 Result
 1. Parameters : 49746 (ideally parameters should have changed)
-2. Best Train Accuracy: 76.29
-3. Best Test Accuracy: 77.59
+2. Best Train Accuracy: 83.57
+3. Best Test Accuracy: 77.31
 
 ### 👀 Analysis
-1. The test accuracy is similar to train or slightly higher till 15th epoch
-2. The parameters are now less than 50k and achieved an accuracy of 77.6%
+1. The model is overfitting too, after 15th epoch the losses are increasing
+2. The target of 70% is acheieved within 20 epochs
 3. We reached a receptive felid of 72
 
 **Receptive feild calculation**
@@ -170,12 +176,12 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 
 ### 💪 Result
 1. Parameters : 49746 (ideally parameters should have changed)
-2. Best Train Accuracy: 76.9
-3. Best Test Accuracy: 78.1
+2. Best Train Accuracy: 81.58
+3. Best Test Accuracy: 73.53
 
 ### 👀 Analysis
-1. The test accuracy is similar to train or slightly higher till 15th epoch
-2. The parameters are now less than 50k and achieved an accuracy of 78.1%
+1. The model is overfitting too, after 15th epoch the losses are increasing
+2. The target of 70% is acheieved within 20 epochs
 3. We reached a receptive felid of 72
 
 
