@@ -101,7 +101,7 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 ![bn_misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/batch_normalization/bn_misclassified%20images.png)
 
 **Link to the Notebook**
-[Model with Batch Normalization](https://github.com/prarthananbhat/ERA/blob/master/Session_8/S8%20-%20Batch%20Normalization%20.ipynb)
+[Model with Batch Normalization](https://github.com/prarthananbhat/ERA/blob/master/Session_8/S8_Batch_Normalization_.ipynb)
 
 
 ### Step 2
@@ -132,7 +132,7 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 ![gn_misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/group%20Normailization/gn_missclassified_images.png)
 
 **Link to the Notebook**
-[Model with Group Normalization](https://github.com/prarthananbhat/ERA/blob/master/Session_8/S8%20-%20Group%20Normalization%20.ipynb)
+[Model with Group Normalization](https://github.com/prarthananbhat/ERA/blob/master/Session_8/S8_Group_Normalization_.ipynb)
 
 
 ### Step 3
@@ -164,6 +164,6 @@ The final accuracy at 15th  epoch is >70% for train and test set.
 ![ln_misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/layer%20Normalization/Step%202%20missclassified%20images.png)
 
 **Link to the Notebook**
-[Model with Layer Normalization](https://github.com/prarthananbhat/ERA/blob/master/Session_8/S8%20-%20Layer%20Normalization%20.ipynb)
+[Model with Layer Normalization](https://github.com/prarthananbhat/ERA/blob/master/Session_8/S8_Layer_Normalization_.ipynb)
 
 
