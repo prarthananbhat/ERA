@@ -1,16 +1,34 @@
-## 🤖 Assignment from Session 9 - Advanced Convolutions, Data Augmentation and Visualization
+## 🤖 Assignment from Session 10 - Residual Connections in CNNs and One Cycle Policy!
 
 ### Objectiv 🏆 
-1. Make this network for CIFA10 by using Convolutions with stride 2 instead of Maxpooling
-2. Reach a Receptive feild of 44 or more
-3. one of the layers must use Depthwise Separable Convolution
-4. one of the layers must use Dilated Convolution
-5. use GAP (compulsory):- add FC after GAP to target #of classes (optional)
-6. use albumentation library and apply:
-   1. horizontal flip
-   2. shiftScaleRotate
-   3. coarseDropout (max_holes = 1, max_height=16px, max_width=1, min_holes = 1, min_height=16px, min_width=16px, fill_value=(mean of your dataset), mask_fill_value = None)
-7. achieve 85% accuracy, as many epochs as you want. Total Params to be less than 200k.
+1. Write a custom ResNet architecture for CIFAR10 that has the following architecture:
+   1. PrepLayer - Conv 3x3 s1, p1) >> BN >> RELU [64k]
+   2. Layer1 -
+   3. X = Conv 3x3 (s1, p1) >> MaxPool2D >> BN >> RELU [128k]
+   4. R1 = ResBlock( (Conv-BN-ReLU-Conv-BN-ReLU))(X) [128k]
+   5. Add(X, R1)
+   6. Layer 2 -
+   7. Conv 3x3 [256k]
+   8. MaxPooling2D
+   9. BN
+   10. ReLU
+   11. Layer 3 -
+   12. X = Conv 3x3 (s1, p1) >> MaxPool2D >> BN >> RELU [512k]
+   13. R2 = ResBlock( (Conv-BN-ReLU-Conv-BN-ReLU))(X) [512k]
+   14. Add(X, R2)
+   15. MaxPooling with Kernel Size 4
+   16. FC Layer
+   17. SoftMax
+2. Uses One Cycle Policy such that:
+3. Total Epochs = 24
+4. Max at Epoch = 5
+5. LRMIN = FIND
+6. LRMAX = FIND
+7. NO Annihilation
+8. Uses this transform -RandomCrop 32, 32 (after padding of 4) >> FlipLR >> Followed by CutOut(8, 8)
+9. Batch size = 512
+10. Use ADAM, and CrossEntropyLoss
+11. Target Accuracy: 90%
 
 ### Dataset
 The CIFAR-10 dataset consists of 60000 32x32 colour images in 10 classes, with 6000 images per class. There are 50000 training images and 10000 test images.
@@ -23,9 +41,9 @@ Here are the classes in the dataset, as well as 10 random images from each:
 ```
 .
 |-- README.md
-|-- S9 - base model.ipynb
-|-- S9_model_1.ipynb
-|-- S9_model_2.ipynb
+|-- S10_model.ipynb
+|-- test.py
+|-- train.py
 |-- models.py
 |-- utils.py
 |-- dataset.py
@@ -35,15 +53,16 @@ Here are the classes in the dataset, as well as 10 random images from each:
 
 #### models.py
 This file holds all the model definitions (network architecture). 2 models were added as part of this assignm,ent. 
-1. s9_base_model - *Inital model with strided convolution*
-2. s9_model_1 - *Model with Depthwise convolution and dialated convolution*
-3. s9_model_2 - *Model with Depthwise convolution and dialated convolution and augmentations from albumentation*
+1. s10_model - *RESNET model with 6,573,120 paraneters*
 
+**Receptive feild calculation**
+![receptive_feild](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%201/receptive%20feild%20calculations.png)
+
+**Model Summary**
+![model](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%201/base_model.png)
 
 #### utils.py
-This files stores the utility function. 2 additional plotting functions are added
-**plot_samples_cifar** function plots 12 images from the data loader
-**plot_misclassified_images** plots the 25 images that are wrongly specified with titles like *Predicted : Cat, Actual Dog*
+all the plotting functions required for accuracy_metrics, sample images plot and misclassified images is avaible in this file.
 
 #### dataset.py
 Two classes are defined here,
@@ -53,8 +72,14 @@ Two classes are defined here,
 #### transform.py
 We have two set of transforms in this file, One from the pytorch transforms library and other from the albumentations Library
 
-#### Notebooks S9 - base model.ipynb .ipynb, S9_model_1.ipynb, S9_model_2.ipynb
-These notebooks that act a main function call and includes the following steps
+#### train.py
+Model gets trained for everybatch in the file. We have also added the scheduler.step() for oncycle lr in the same code. Train losses and accuracies are calculated here.
+
+#### test.py
+Predictions from the trained model for every batch happens here. Test losses and accuracies are caluclted.
+
+#### Notebooks S10_model.ipynb
+This notebook that act a main function call and includes the following steps
 
 1. Google drive set up to store your code and link the drive to the Notebook.
 2. Define the transformation for test and train dataset. 
@@ -66,32 +91,25 @@ These notebooks that act a main function call and includes the following steps
 
 6. Run the model
 With a batch size of 512 we are running 15 epochs.
-Optimasation method is Stochastic Gradient Decent and the Loss function is  negative log likelihood loss
+Optimasation method is *ADAM* and the Loss function is *Cross Entropy Loss*
 
 
 ### Solution: Target Result and Analysis ✌✌️
-### Step 1
 ### 🎯 Target
-1. Create a base model with convolutions of stride 2 instead of max pooling in all the 3 convolution blocks
-2. Experiment with 50 epochs and observe the accuracies
-3. Parameters should be less than 200K
+1. Create a RESNET Model
+2. Use LR Finder to find the optimal LR (*a learning rate where there is a maximum loss drop*)
+3. Use One Cycle LR poilicy to increase the learning rate to maximum of 100 times of your initial learning rate and then reduce it.
+4. Run for 24 Epochs
 
 ### 💪 Result
-1. Parameters : 111978
-2. Best Train Accuracy: 98.04
-3. Best Test Accuracy: 77.4
+1. Parameters : 6,573,120
+2. Best Train Accuracy: 90.63
+3. Best Test Accuracy: 90.27
 
 ### 👀 Analysis
-1. Not a great model, Overfits like crazy 
-2. The receptive field at the final layer is 47
-3. Had to use a couple of 4X4 Convolutions to have channel sizes of decimals like (16.5)
-4. After 35th epoch we see that test accuracies were decresing
-
-**Receptive feild calculation**
-![receptive_feild](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%201/receptive%20feild%20calculations.png)
-
-**Model Summary**
-![model](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%201/base_model.png)
+1. The losses for both train and test were fluctuating a lot because of oncycle_lr.
+2. We reached the target accuracy of 90% in the 24th epoch.
+3. The best lr found by the fr finder was 0.0005
 
 **Last few epochs**
 ![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%201/base_model_epochs.png)
@@ -106,80 +124,6 @@ Optimasation method is Stochastic Gradient Decent and the Loss function is  nega
 [Base model](https://github.com/prarthananbhat/ERA/blob/master/Session_9/S9%20-%20base%20model.ipynb)
 
 
-
-### Step 2
-### 🎯 Target
-1. Increase capacity in the model
-2. Add a dilated convolution instead of a 3 X 3 convolution of stride 2
-3. Experiment with 50 epochs and observe the accuracies
-4. Add a depthwise seperable convolution
-5. Add Augmentation from pytorch library
-   1.Random Rotation, Random Crop, Horizontal flip and Random Affine 
-6. Run for 50 epochs
-
-### 💪 Result
-1. Parameters : 191898
-2. Best Train Accuracy: 81.84
-3. Best Test Accuracy: 84.63
-
-### 👀 Analysis
-1. We reached the 84.63% accuracy at 50 the epoch.
-2. Thr overfitting was reduced after adding augmentation
-3. The epochs were quite slow, due to trasformations
-
-**Receptive feild calculation**
-![receptive_feild](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%202/Receptive%20Feild%20Calculations.png)
-
-**Model Summary**
-![model](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%202/model.png)
-
-**Last few epochs**
-![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%202/epochs.png)
-
-**Misclassified images**
-![misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%202/missclassified_images.png)
-
-**Loss Curves**
-![loss_curves](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%202/loss_curves.png)
-
-**Link to the Notebook**
-[Model with Augmentation](https://github.com/prarthananbhat/ERA/blob/master/Session_9/S9_model_1.ipynb)
-
-
-### Step 3
-### 🎯 Target
-1. Use Augmentation from albumentation package
-   1. ShiftScaleRotate
-   2. HorizontalFlip
-   3. CoarseDropout   
-
-### 💪 Result
-1. Parameters : 191898
-2. Best Train Accuracy: 78.17
-3. Best Test Accuracy: 83.02
-
-### 👀 Analysis
-1. We reached the 83% accuracy at 50 the epoch.
-2. Thr overfitting was reduced after adding augmentation
-3. The albumentation transforms were faster compared to pytorch transfomrations
-
-**Transformed Images**
-![transformed_images](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%203/sample_transformed_images.png)
-
-**Receptive feild calculation**
-![receptive_feild](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%203/receptive%20feild%20calculations.png)
-
-**Model Summary**
-![model](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%203/model.png)
-
-**Last few epochs**
-![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%203/epochs.png)
-
-**Misclassified images**
-![misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%203/missclassified_images.png)
-
-**Link to the Notebook**
-[Model with Augmentation](https://github.com/prarthananbhat/ERA/blob/master/Session_9/S9_model_2.ipynb)
 
 
 
