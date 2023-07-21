@@ -56,10 +56,10 @@ This file holds all the model definitions (network architecture). 2 models were 
 1. s10_model - *RESNET model with 6,573,120 paraneters*
 
 **Receptive feild calculation**
-![receptive_feild](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%201/receptive%20feild%20calculations.png)
+![receptive_feild]()
 
 **Model Summary**
-![model](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%201/base_model.png)
+![model](https://github.com/prarthananbhat/ERA/blob/master/Session_10/misc/model.png)
 
 #### utils.py
 all the plotting functions required for accuracy_metrics, sample images plot and misclassified images is avaible in this file.
@@ -87,7 +87,7 @@ This notebook that act a main function call and includes the following steps
  The image size is 32 X 32 and we have 60K images in train and 10K images in the test set
 
 4. Plot a sample set of images using the functions rom utils library
-![smaple_images](https://github.com/prarthananbhat/ERA/blob/master/Session_8/misc/Sample%20Images.png)
+![smaple_images](https://github.com/prarthananbhat/ERA/blob/master/Session_10/misc/sample_images.png)
 
 6. Run the model
 With a batch size of 512 we are running 15 epochs.
@@ -112,16 +112,16 @@ Optimasation method is *ADAM* and the Loss function is *Cross Entropy Loss*
 3. The best lr found by the fr finder was 0.0005
 
 **Last few epochs**
-![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%201/base_model_epochs.png)
+![epochs](https://github.com/prarthananbhat/ERA/blob/master/Session_10/misc/epochs.png)
 
 **Misclassified images**
-![misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%201/missclassified%20images.png)
+![misclassified_images](https://github.com/prarthananbhat/ERA/blob/master/Session_10/misc/missclassified%20images.png)
 
 **Loss Curves**
-![loss_curves](https://github.com/prarthananbhat/ERA/blob/master/Session_9/misc/Step%201/base_model_loss_curves.png)
+![loss_curves](https://github.com/prarthananbhat/ERA/blob/master/Session_10/misc/loss%20curve.png)
 
 **Link to the Notebook**
-[Base model](https://github.com/prarthananbhat/ERA/blob/master/Session_9/S9%20-%20base%20model.ipynb)
+[Base model](https://github.com/prarthananbhat/ERA/blob/master/Session_10/S10_model.ipynb)
 
 
 
